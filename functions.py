@@ -151,8 +151,8 @@ def train_model(path = '../input/tide-match-data/data_interview_test.csv', outpu
 
     x_train, y_train = SMOTE(sampling_strategy = .4, random_state=42).fit_resample(x_train, y_train)
     skf = StratifiedKFold(n_splits=10, shuffle = True, random_state = 42)
-    x_train = x1.reset_index(drop = True)
-    y_train = y1.reset_index(drop = True)
+    #x_train = x1.reset_index(drop = True)
+    #y_train = y1.reset_index(drop = True)
     fold = 0
     for train_index, test_index in skf.split(x_train, y_train):
         x_tr, x_tt = x_train.values[train_index], x_train.values[test_index]
